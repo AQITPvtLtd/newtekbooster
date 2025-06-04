@@ -7,10 +7,10 @@ import Faq from '@/components/homepage/Faq'
 const page = () => {
   return (
     <div>
-        <About />
-        <Statistics />
-        <Adds />
-        <Faq />
+      <About />
+      <Statistics />
+      <Adds />
+      <Faq />
     </div>
   )
 }

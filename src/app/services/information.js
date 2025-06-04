@@ -36,7 +36,7 @@ export const data = [
     },
     {
         id: 6,
-        image: "/services/img5.jpg",
+        image: "/services/img5.png",
         title: "Video Marketing",
         url: "services/Video-Marketing",
         btn: "Know More"

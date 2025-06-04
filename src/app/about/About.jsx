@@ -1,5 +1,5 @@
 import React from 'react'
-import MissionVision from './missionvision'
+import MissionVision from './MissionVision'
 
 const About = () => {
   return (

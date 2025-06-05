@@ -22,7 +22,7 @@ export const data = [
     },
     {
         id: 4,
-        image: "/services/img3.png",
+        image: "/services/img3.jpg",
         title: "Search Engine Optimization",
         url: "services/SEO",
         btn: "Know More"

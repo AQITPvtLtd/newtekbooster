@@ -6,6 +6,7 @@ import moment from "moment";
 import Image from 'next/image';
 import { FaUser } from "react-icons/fa";
 import Sidebar from '../../Sidebar';
+import { MdEmail } from "react-icons/md";
 
 const DetailedBlog = ({ id, url }) => {
     const [blog, setBlog] = useState(null);
@@ -45,7 +46,7 @@ const DetailedBlog = ({ id, url }) => {
     }
 
     return (
-        <section className="overflow-hidden pt-10 lg:px-14 px-3 dark:bg-white">
+        <section className="overflow-hidden pt-10 lg:px-14 px-3 bg-white">
             <div className="container dark:text-black">
                 <div className="flex flex-wrap lg:flex-nowrap -mx-4">
 
@@ -67,8 +68,8 @@ const DetailedBlog = ({ id, url }) => {
                                     </div>
                                     <div className="mb-5 flex items-center">
                                         <p className="mr-5 flex items-center text-base font-medium text-body-color">
-                                            <span className="mr-3" aria-hidden="true">
-                                                {/* Optional calendar icon here */}
+                                            <span className=" mr-1" aria-hidden="true">
+                                                <MdEmail className='text-[#084cfc]' />
                                             </span>
                                             {blogDetail.createdAt ? moment(blogDetail.createdAt).format("MMMM DD, YYYY") : "Unknown Date"}
                                         </p>

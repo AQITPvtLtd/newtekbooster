@@ -15,7 +15,7 @@ import { FaQuora } from "react-icons/fa";
 // import NewsLetter from "../NewLetter";
 const Footer = () => {
   return (
-    <div className="mt-20 mx-auto w-full p-4 lg:py-8 bg-gradient-to-t bg-blue">
+    <div className="mx-auto w-full p-4 lg:py-8 bg-gradient-to-t bg-blue">
       {/* <NewsLetter /> */}
       <div className="px-10 text-white">
         <div className="lg:grid grid-cols-4">

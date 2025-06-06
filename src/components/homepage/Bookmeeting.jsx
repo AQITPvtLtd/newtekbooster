@@ -13,7 +13,7 @@ const Bookmeeting = () => {
                 <Link href="tel:+919582-930-940" aria-label="Call our phone number">
                     <div className="bg-white rounded-lg shadow-md p-3 text-center hover:scale-[1.02] transition-transform duration-300 cursor-pointer">
                         <div className="flex justify-center mb-2">
-                            <IoCall className="text-white text-3xl sm:text-4xl p-3 bg-green-600 rounded-full" />
+                            <IoCall className="text-white text-3xl sm:text-4xl p-3 bg-[#084cfc] rounded-full" />
                         </div>
                         <h3 className="text-lg sm:text-xl font-semibold text-black">Phone Number</h3>
                         <p className="text-gray-700 text-sm sm:text-base mt-1">+91 9582-930-940</p>
@@ -24,7 +24,7 @@ const Bookmeeting = () => {
                 <Link href="mailto:info@tekbooster.com" aria-label="Send us an email">
                     <div className="bg-white rounded-lg shadow-md p-3 text-center hover:scale-[1.02] transition-transform duration-300 cursor-pointer">
                         <div className="flex justify-center mb-2">
-                            <MdEmail className="text-white text-3xl sm:text-4xl p-3 bg-green-600 rounded-full" />
+                            <MdEmail className="text-white text-3xl sm:text-4xl p-3 bg-[#084cfc] rounded-full" />
                         </div>
                         <h3 className="text-lg sm:text-xl font-semibold text-black">Email Address</h3>
                         <p className="text-gray-700 text-sm sm:text-base mt-1">info@tekbooster.com</p>
@@ -38,7 +38,7 @@ const Bookmeeting = () => {
                 <div className="text-center mb-6 p-3 rounded-2xl hover:scale-[1.02] transition-transform duration-300" style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
                     <Link href='https://maps.app.goo.gl/5JndU6hT3avgQBHZ9' target='__blank' >
                         <div className="flex justify-center mb-4">
-                            <IoLocationSharp className="text-white text-3xl sm:text-4xl p-3 bg-green-600 rounded-full" />
+                            <IoLocationSharp className="text-white text-3xl sm:text-4xl p-3 bg-[#084cfc] rounded-full" />
                         </div>
                         <h3 className="text-lg sm:text-xl font-semibold text-black">Corporate Office</h3>
                         <p className="text-gray-700 text-sm sm:text-base mt-1">
@@ -52,7 +52,7 @@ const Bookmeeting = () => {
                     {/* Branch – Karol Bagh */}
                     <Link href='https://maps.app.goo.gl/SKHJzoxnJVa1VLkW7' className='rounded-2xl p-3 hover:scale-[1.02] transition-transform duration-300' target='__blank' style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
                         <div className="flex justify-center mb-4">
-                            <IoLocationSharp className="text-white text-3xl sm:text-4xl p-3 bg-green-600 rounded-full" />
+                            <IoLocationSharp className="text-white text-3xl sm:text-4xl p-3 bg-[#084cfc] rounded-full" />
                         </div>
                         <div className="text-center">
                             <h3 className="text-base sm:text-lg font-semibold text-black">Branch Office</h3>
@@ -65,7 +65,7 @@ const Bookmeeting = () => {
                     {/* Branch – Shalimar Bagh */}
                     <Link href='https://maps.app.goo.gl/EPQcdZbHEbQ2GYBR7' className='rounded-2xl p-3 hover:scale-[1.02] transition-transform duration-300' target='__blank' style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
                         <div className="flex justify-center mb-4">
-                            <IoLocationSharp className="text-white text-3xl sm:text-4xl p-3 bg-green-600 rounded-full" />
+                            <IoLocationSharp className="text-white text-3xl sm:text-4xl p-3 bg-[#084cfc] rounded-full" />
                         </div>
                         <div className="text-center">
                             <h3 className="text-base sm:text-lg font-semibold text-black">Branch Office</h3>

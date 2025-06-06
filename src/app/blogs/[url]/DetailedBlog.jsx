@@ -1,14 +1,14 @@
 "use client";
 
 import { getBlog } from '@/services/getblog';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import moment from "moment";
 import Image from 'next/image';
 import { FaUser } from "react-icons/fa";
-import Sidebar from '../../Sidebar';
 import { MdEmail } from "react-icons/md";
+import Sidebar from '../Sidebar';
 
-const DetailedBlog = ({ id, url }) => {
+const DetailedBlog = ({ url }) => {
     const [blog, setBlog] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -17,7 +17,9 @@ const DetailedBlog = ({ id, url }) => {
             try {
                 setLoading(true);
                 const result = await getBlog();
-                setBlog(result.result || result);
+                const blogs = result.result || result;
+                const found = blogs.find((b) => b.url === url);
+                setBlog(found);
             } catch (error) {
                 console.error("Error fetching blog:", error);
             } finally {
@@ -25,24 +27,14 @@ const DetailedBlog = ({ id, url }) => {
             }
         }
         getData();
-    }, [id, url]);
-
-    const blogDetail = blog?.find((b) => b.id == id && b.url == url);
+    }, [url]);
 
     if (loading) {
-        return (
-            <section className="pt-10 text-center text-black dark:text-white">
-                <p>Loading blog...</p>
-            </section>
-        );
+        return <section className="pt-10 text-center text-black dark:text-white">Loading blog...</section>;
     }
 
-    if (!blogDetail) {
-        return (
-            <section className="pt-10 text-center text-black dark:text-white">
-                <p>Blog not found.</p>
-            </section>
-        );
+    if (!blog) {
+        return <section className="pt-10 text-center text-black dark:text-white">Blog not found.</section>;
     }
 
     return (
@@ -54,7 +46,7 @@ const DetailedBlog = ({ id, url }) => {
                     <div className="w-full lg:w-3/4 px-4">
                         <article>
                             <h1 className="mb-5 text-3xl font-bold leading-tight text-black sm:text-4xl sm:leading-tight">
-                                {blogDetail.title}
+                                {blog.title}
                             </h1>
 
                             {/* Author and Date */}
@@ -71,7 +63,7 @@ const DetailedBlog = ({ id, url }) => {
                                             <span className=" mr-1" aria-hidden="true">
                                                 <MdEmail className='text-[#084cfc]' />
                                             </span>
-                                            {blogDetail.createdAt ? moment(blogDetail.createdAt).format("MMMM DD, YYYY") : "Unknown Date"}
+                                            {blog.createdAt ? moment(blog.createdAt).format("MMMM DD, YYYY") : "Unknown Date"}
                                         </p>
                                     </div>
                                 </div>
@@ -81,8 +73,8 @@ const DetailedBlog = ({ id, url }) => {
                             <div>
                                 <div className="w-full overflow-hidden rounded">
                                     <Image
-                                        src={blogDetail.image.startsWith('http') ? blogDetail.image : `/blog/${blogDetail.image}`}
-                                        alt={blogDetail.title || "Blog image"}
+                                        src={blog.image.startsWith('http') ? blog.image : `/blog/${blog.image}`}
+                                        alt={blog.title || "Blog image"}
                                         height={500}
                                         width={800}
                                         className="h-full w-full object-cover object-center"
@@ -91,7 +83,7 @@ const DetailedBlog = ({ id, url }) => {
                                 </div>
                                 <div
                                     className="p-5"
-                                    dangerouslySetInnerHTML={{ __html: blogDetail.content }}
+                                    dangerouslySetInnerHTML={{ __html: blog.content }}
                                 />
                             </div>
                         </article>
@@ -105,7 +97,7 @@ const DetailedBlog = ({ id, url }) => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default DetailedBlog;

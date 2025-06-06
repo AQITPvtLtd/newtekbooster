@@ -42,7 +42,7 @@ const Sidebar = () => {
                         <tbody>
                             {blog.map((b) => (
                                 <tr
-                                    key={b.id}
+                                    key={b.url}
                                     className="hover:translate-x-2 transition duration-300 ease-in-out"
                                 >
                                     <td className="align-top">
@@ -51,7 +51,7 @@ const Sidebar = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <Link href={`/blogs/${b.id}/${b.url}`}>
+                                        <Link href={`/blogs/${b.url}`}>
                                             <div className="flex gap-1 items-center hover:text-[#084cfc]">
                                                 <h2 className="text-lg font-medium">{b.title}</h2>
                                             </div>

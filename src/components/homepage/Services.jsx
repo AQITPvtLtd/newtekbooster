@@ -1,16 +1,49 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { GrPrevious, GrNext } from "react-icons/gr";
 import Image from "next/image";
 import Link from "next/link";
-import dynamic from 'next/dynamic';
-const items = await import("@/data/services").then(mod => mod.items);
 import { motion } from "framer-motion";
 
+// Custom Arrows
+const CustomNextArrow = (props) => {
+    const { onClick } = props;
+    return (
+        <button
+            className="absolute top-1/2 right-2 cursor-pointer md:right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-600 z-10"
+            onClick={onClick}
+        >
+            <GrNext size={24} />
+        </button>
+    );
+};
+
+const CustomPrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+        <button
+            className="absolute top-1/2 left-2 cursor-pointer md:left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-600 z-10"
+            onClick={onClick}
+        >
+            <GrPrevious size={24} />
+        </button>
+    );
+};
+
 const Services = () => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        const loadItems = async () => {
+            const mod = await import("@/data/services");
+            setItems(mod.items);
+        };
+        loadItems();
+    }, []);
+
     const settings = {
         dots: false,
         infinite: true,
@@ -23,23 +56,17 @@ const Services = () => {
         responsive: [
             {
                 breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                },
+                settings: { slidesToShow: 2, slidesToScroll: 1 },
             },
             {
                 breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    swipeToSlide: true,
-                },
+                settings: { slidesToShow: 1, slidesToScroll: 1, swipeToSlide: true },
             },
         ],
     };
+
     return (
-        <div className="relative"> {/* Removed px-4 here to reduce outer gap */}
+        <div className="relative">
             <motion.h1
                 className="text-center font-semibold text-3xl md:text-4xl text-white py-5"
                 style={{ fontFamily: "Roboto Slab, serif" }}
@@ -51,11 +78,11 @@ const Services = () => {
                 Our Services
             </motion.h1>
 
-            <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-8"> {/* Reduced horizontal padding */}
+            <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-8">
                 <Slider {...settings}>
                     {items.map((item) => (
-                        <div key={item.id} className="px-5"> {/* Increased gap between cards */}
-                            <div className="bg-white h-full rounded-tl-[30%] rounded-br-[30%] rounded-lg shadow-xl flex flex-col overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <div key={item.id} className="px-5">
+                            <div className="bg-white rounded-tl-[30%] rounded-br-[30%] rounded-lg shadow-xl flex flex-col overflow-hidden transform transition-transform duration-300 hover:scale-105">
                                 <div className="h-[220px] md:h-[240px] overflow-hidden">
                                     <Image
                                         src={item.image}
@@ -93,29 +120,4 @@ const Services = () => {
     );
 };
 
-// Custom Arrows
-const CustomNextArrow = (props) => {
-    const { onClick } = props;
-    return (
-        <button
-            className="absolute top-1/2 right-2 cursor-pointer md:right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-600 z-10"
-            onClick={onClick}
-        >
-            <GrNext size={24} />
-        </button>
-    );
-};
-
-const CustomPrevArrow = (props) => {
-    const { onClick } = props;
-    return (
-        <button
-            className="absolute top-1/2 left-2 cursor-pointer md:left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-600 z-10"
-            onClick={onClick}
-        >
-            <GrPrevious size={24} />
-        </button>
-    );
-};
-
-export default Services
+export default Services;

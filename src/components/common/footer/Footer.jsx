@@ -55,6 +55,13 @@ const Footer = () => {
                   >
                     About Us
                   </Link>
+                </li><li>
+                  <Link
+                    href="/services"
+                    className="hover:text-orange-200 hover:scale-105"
+                  >
+                    Services
+                  </Link>
                 </li>
                 <li>
                   <Link
@@ -118,56 +125,41 @@ const Footer = () => {
           {/* address */}
           <div className="lg:flex justify-center mt-6 lg:ml-5">
             <div className="mb-6">
-              <ul className="mb-0 list-none leading-loose">
-                <li className="leading-normal">
-                  <h5 className="mb-2.5 font-bold uppercase">
-                    Connect with us
-                  </h5>
-                  <div className="flex gap-2">
-                    <div>
-                      <FaLocationDot className="text-xl mt-1" />
-                    </div>
-                    <Link
-                      href="https://www.google.com/maps/search/Fourth+floor,+2E,+4,+Jhandewalan+Extension,+Delhi,+110055/@28.7667911,77.0054189,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
-                      className="hover:text-orange-200 hover:scale-105 flex"
-                      target="__blank"
-                    >
-                      Fourth floor, 2E, 4, Jhandewalan Extension, Delhi, 110055
-                    </Link>
-                  </div>
-                </li>
-                <li className="mt-3 leading-normal">
-                  <Link href="tel:9582-930-940">
-                    {/* <h5 className="mb-2.5 font-bold uppercase">Phone</h5> */}
-                    <div className="flex gap-2">
-                      <div>
-                        <FaPhone className="mt-1" />
-                      </div>
-                      <div className="hover:text-orange-200 hover:scale-105">
-                        +91 9582-930-940
-                      </div>
-                    </div>
+              <h5 className="mb-4 font-bold uppercase">Connect with us</h5>
+              <ul className="space-y-4">
+                {/* Phone */}
+                <li>
+                  <Link href="tel:9582-930-940" className="flex items-center gap-2 hover:text-orange-200 hover:scale-105 transition">
+                    <FaPhone className="text-lg" />
+                    <span>+91 9582-930-940</span>
                   </Link>
                 </li>
 
-                <li className="mt-3 leading-normal">
-                  {/* whatsapp */}
+                {/* WhatsApp */}
+                <li>
+                  <Link href="https://wa.link/1dzd8t" target="_blank" className="flex items-center gap-2 hover:text-orange-200 hover:scale-105 transition">
+                    <RiWhatsappFill className="text-xl" />
+                    <span>Connect on WhatsApp</span>
+                  </Link>
+                </li>
 
-                  <Link href="https://wa.link/1dzd8t" target="_blank">
-                    <div className="flex gap-2">
-                      <div>
-                        <RiWhatsappFill className="mt-1 text-xl" />
-                        {/* <FaWhatsapp  /> */}
-                      </div>
-                      <div className="hover:text-orange-200 hover:scale-105">
-                        connect on whatsapp
-                      </div>
-                    </div>
+                {/* Address */}
+                <li>
+                  <Link
+                    href="https://www.google.com/maps/search/Fourth+floor,+2E,+4,+Jhandewalan+Extension,+Delhi,+110055/@28.7667911,77.0054189,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    className="flex items-start gap-3 hover:text-orange-200 hover:scale-105 transition"
+                  >
+                    <FaLocationDot className="text-xl mt-1" />
+                    <span>
+                      Fourth floor, 2E, 4, Jhandewalan Extension, Delhi, 110055
+                    </span>
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
+
         </div>
       </div>
       <hr className="my-6 border-white sm:mx-auto  lg:my-8" />
@@ -178,24 +170,27 @@ const Footer = () => {
         <Link href="https://www.instagram.com/tek_booster/" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
           <FaInstagram />
         </Link>
-        <Link href="https://wa.link/1dzd8t" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
-          <FaWhatsapp />
-        </Link>
         <Link href="https://www.linkedin.com/in/tek-booster-7739092b8/" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
           <FaLinkedinIn />
-        </Link>
-        <Link href="https://in.pinterest.com/tekbooster/" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
-          <FaPinterest />
-        </Link>
-        <Link href="https://www.youtube.com/channel/UCdI4zxcUrKryZd__uQysiNg" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
-          <FaYoutube />
         </Link>
         <Link href="https://twitter.com/Tek_booster" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
           <FaXTwitter />
         </Link>
+        <Link href="https://www.youtube.com/channel/UCdI4zxcUrKryZd__uQysiNg" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+          <FaYoutube />
+        </Link>
+
+        <Link href="https://in.pinterest.com/tekbooster/" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+          <FaPinterest />
+        </Link>
+
         <Link href="https://www.quora.com/profile/Tekbooster" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
           <FaQuora />
         </Link>
+        <Link href="https://wa.link/1dzd8t" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+          <FaWhatsapp />
+        </Link>
+
       </div>
 
       <div className="flex justify-center items-center text-white">

@@ -3,6 +3,7 @@ import { IoLocationSharp, IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import Link from "next/link";
 import Form from '@/app/contact/form/Form';
+import Addresses from './Addresses';
 
 const Bookmeeting = () => {
     const AddressContent = () => (
@@ -27,7 +28,7 @@ const Bookmeeting = () => {
                 </div>
             </Link>
 
-            <Link href="" aria-label="View our location on Google Maps">
+            {/* <Link href="" aria-label="View our location on Google Maps">
                 <div className="flex items-start gap-4 hover:scale-[1.02] transition-transform duration-300">
                     <IoLocationSharp className="text-white text-3xl sm:text-4xl p-2 bg-[#084cfc] rounded-full" />
                     <div>
@@ -49,7 +50,9 @@ const Bookmeeting = () => {
                         </p>
                     </div>
                 </div>
-            </Link>
+            </Link> */}
+
+
         </div>
     );
 
@@ -64,6 +67,7 @@ const Bookmeeting = () => {
                     <Form />
                 </div>
             </div>
+            <Addresses />
         </section>
     );
 }

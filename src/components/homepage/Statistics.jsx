@@ -1,12 +1,15 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
     {
         title: "Years of Excellence",
-        number: 10,
-        con: "Delivering 10+ years of innovative digital marketing solutions.",
+        number: 4,
+        con: "Delivering 4+ years of innovative digital marketing solutions.",
     },
     {
         title: "Client Satisfaction",
@@ -20,45 +23,35 @@ const stats = [
     },
 ];
 
-const ProgressCircle = ({ percentage, title, con, delay = 0 }) => {
+const ProgressCircle = ({ percentage, number, title, con }) => {
     const radius = 40;
     const circumference = 2 * Math.PI * radius;
-    const offset = percentage ? circumference - (circumference * percentage) / 100 : 0;
+    const progress = percentage ?? 100;
+    const offset = circumference - (circumference * progress) / 100;
 
     return (
-        <motion.div
-            className="flex flex-col items-center text-center space-y-4 max-w-xs"
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay }}
-            viewport={{ once: false, amount: 0.4 }}
-        >
+        <div className="stat-box flex flex-col items-center text-center space-y-4 max-w-xs opacity-0 translate-y-10">
             <div className="relative w-24 h-24">
                 <svg className="w-full h-full" viewBox="0 0 100 100">
-                    {/* Base Circle (Gray) */}
                     <circle
-                        stroke="#e5e7eb" // gray-200
+                        stroke="#e5e7eb"
                         strokeWidth="8"
                         cx="50"
                         cy="50"
                         r="40"
                         fill="transparent"
                     />
-                    {/* Progress Circle */}
-                    {percentage && (
-                        <circle
-                            stroke="#084cfc"
-                            strokeWidth="8"
-                            strokeLinecap="round"
-                            cx="50"
-                            cy="50"
-                            r="40"
-                            fill="transparent"
-                            strokeDasharray={circumference}
-                            strokeDashoffset={offset}
-                        />
-                    )}
-                    {/* Text in Center */}
+                    <circle
+                        stroke="#084cfc"
+                        strokeWidth="8"
+                        strokeLinecap="round"
+                        cx="50"
+                        cy="50"
+                        r="40"
+                        fill="transparent"
+                        strokeDasharray={circumference}
+                        strokeDashoffset={offset}
+                    />
                     <text
                         x="50%"
                         y="50%"
@@ -66,38 +59,59 @@ const ProgressCircle = ({ percentage, title, con, delay = 0 }) => {
                         textAnchor="middle"
                         fontSize="18"
                         fontWeight="bold"
-                        fill="#FFFFFF" // gray-700
+                        fill="#FFFFFF"
                     >
-                        {percentage ? `${percentage}%` : `${stats[0].number}+`}
+                        {percentage !== undefined ? `${percentage}%` : `${number}+`}
                     </text>
                 </svg>
             </div>
             <h3 className="text-lg md:text-xl font-semibold text-white">{title}</h3>
             <p className="text-sm text-white">{con}</p>
-        </motion.div>
+        </div>
     );
 };
 
 const Statistics = () => {
+    const statsRef = useRef(null);
+
+    useEffect(() => {
+        const statBoxes = gsap.utils.toArray(".stat-box");
+
+        gsap.to(statBoxes, {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            stagger: 0.3,
+            ease: "expo.out",
+            scrollTrigger: {
+                trigger: statsRef.current,
+                start: "top 80%",
+                toggleActions: "play none none reset",
+                once: false,
+            },
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, []);
+
     return (
-        <section className="py-10 px-4">
-            <motion.h2
+        <section className="py-10 px-4" ref={statsRef}>
+            <h2
                 className="text-3xl md:text-4xl font-bold text-center text-white mb-5"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
                 style={{ fontFamily: "Roboto Slab, serif" }}
             >
                 Results That Define Our Digital Excellence
-            </motion.h2>
+            </h2>
             <div className="flex flex-wrap justify-center gap-10">
                 {stats.map((stat, index) => (
                     <ProgressCircle
                         key={index}
                         percentage={stat.percentage}
+                        number={stat.number}
                         title={stat.title}
                         con={stat.con}
-                        delay={index * 0.3}
                     />
                 ))}
             </div>

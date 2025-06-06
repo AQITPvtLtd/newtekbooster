@@ -31,8 +31,8 @@ const Blog = () => {
   return (
     <div className="lg:p-10 overflow-x-clip px-4">
       <div className="pt-5 text-center">
-        <h1 className="text-3xl font-bold text-white">Latest Blog</h1>
-        <p className="text-lg text-white">Read our latest blog.</p>
+        <h1 className="text-3xl font-bold text-white" style={{ fontFamily: "Roboto Slab, serif" }}>Latest Blog</h1>
+        <p className="text-lg text-white mt-5">Read our latest blog.</p>
       </div>
 
       {blog.length === 0 ? (

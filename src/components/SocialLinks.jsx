@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const SocialLinks = () => {
   return (
-    <div className="gap-4 fixed top-0 mt-[200px] right-0 flex flex-col justify-center items-center p-4 bg-gray-200 z-40 rounded-l-xl">
+    <div className="hidden sm:flex gap-4 fixed top-0 mt-[200px] right-0 flex-col justify-center items-center p-4 bg-gray-200 z-40 rounded-l-xl">
       {/* facebook */}
       <div className="group relative w-max">
         <Link

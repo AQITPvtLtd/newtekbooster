@@ -45,7 +45,7 @@ const DetailedBlog = ({ id, url }) => {
     }
 
     return (
-        <section className="overflow-hidden pt-10 lg:px-14 px-3 dark:bg-white">
+        <section className="overflow-hidden pt-10 lg:px-14 px-3 bg-white">
             <div className="container dark:text-black">
                 <div className="flex flex-wrap lg:flex-nowrap -mx-4">
 

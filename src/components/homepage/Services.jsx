@@ -39,7 +39,7 @@ const Services = () => {
         ],
     };
     return (
-        <div className="px-4 relative">
+        <div className="relative"> {/* Removed px-4 here to reduce outer gap */}
             <motion.h1
                 className="text-center font-semibold text-3xl md:text-4xl text-white py-5"
                 style={{ fontFamily: "Roboto Slab, serif" }}
@@ -48,16 +48,15 @@ const Services = () => {
                 viewport={{ once: false, amount: 0.5 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                OUR SERVICES
+                Our Services
             </motion.h1>
 
-
-            <div className="max-w-6xl mx-auto relative">
+            <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-8"> {/* Reduced horizontal padding */}
                 <Slider {...settings}>
                     {items.map((item) => (
-                        <div key={item.id} className="px-2">
-                            <div className="bg-white my-5 h-[420px] md:h-[400px] rounded-lg shadow-lg flex flex-col overflow-hidden transition-transform duration-300 hover:scale-105">
-                                <div className="h-[250px] md:h-[230px] overflow-hidden">
+                        <div key={item.id} className="px-5"> {/* Increased gap between cards */}
+                            <div className="bg-white h-full rounded-tl-[30%] rounded-br-[30%] rounded-lg shadow-xl flex flex-col overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                                <div className="h-[220px] md:h-[240px] overflow-hidden">
                                     <Image
                                         src={item.image}
                                         alt="service icon"
@@ -66,34 +65,32 @@ const Services = () => {
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-                                <div className="p-4 text-center flex-grow">
-                                    <h2 className="text-2xl font-bold text-black" style={{ fontFamily: "Roboto Slab, serif" }}>{item.title}</h2>
-                                </div>
-                                <div className="p-4">
+                                <div className="flex-1 flex flex-col justify-between p-4">
+                                    <h3 className="text-xl md:text-2xl font-bold text-black mb-3" style={{ fontFamily: "Roboto Slab, serif" }}>
+                                        {item.title}
+                                    </h3>
                                     <Link
                                         href={`services/${item.id}`}
-                                        className="px-4 py-2 hover:bg-transparent bg-[#084cfc] text-white text-lg rounded-lg block text-center transition-all 
-                                           border-2 border-[#084cfc] hover:text-black"
+                                        className="inline-block mt-auto px-5 py-2 w-fit bg-[#084cfc] text-white text-base md:text-lg rounded-lg border-2 border-[#084cfc] hover:bg-transparent hover:text-black transition-all"
                                     >
                                         Know More
                                     </Link>
                                 </div>
-
                             </div>
                         </div>
                     ))}
                 </Slider>
-                <div className="text-center mt-5">
+
+                <div className="text-center mt-8">
                     <Link href="/services">
-                        <button className="px-6 py-2 bg-[#084cfc] cursor-pointer text-white rounded-full shadow-md hover:bg-[#0639c9] transition duration-300">
+                        <button className="px-6 py-2 bg-[#084cfc] text-white rounded-full shadow-md hover:bg-[#0639c9] transition duration-300">
                             View All
                         </button>
                     </Link>
                 </div>
-
             </div>
         </div>
-    )
+    );
 };
 
 // Custom Arrows

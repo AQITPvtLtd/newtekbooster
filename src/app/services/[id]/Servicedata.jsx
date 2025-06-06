@@ -36,7 +36,7 @@ const Servicedata = ({ id }) => {
           {/* Main Content Card */}
           <div className="w-full lg:w-3/4 bg-white p-8 rounded-2xl shadow-2xl">
             <h1
-              className="text-4xl font-bold text-pink-700 underline text-center mb-6"
+              className="text-4xl font-bold underline text-center mb-6"
               style={{ fontFamily: "Roboto Slab, serif" }}
             >
               {obj.title}

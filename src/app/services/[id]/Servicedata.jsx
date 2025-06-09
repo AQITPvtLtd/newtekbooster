@@ -53,7 +53,7 @@ const Servicedata = ({ id }) => {
               className="text-xl font-semibold mb-4 dark:text-black"
               style={{ fontFamily: "Roboto Slab, serif" }}
             >
-              Types of cancer
+              Know More Services
             </h2>
             <ul className="space-y-2">
               {dataservice.map((item, index) => (

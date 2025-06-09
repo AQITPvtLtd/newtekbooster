@@ -98,7 +98,7 @@ const Faq = () => {
                 id={`faq-btn-${index}`}
                 aria-controls={`faq-panel-${index}`}
                 aria-expanded={activeIndex === index}
-                className="flex justify-between items-center w-full px-5 py-3 font-medium dark:text-black border-black bg-white hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400"
+                className="flex justify-between cursor-pointer items-center w-full px-5 py-3 font-medium dark:text-black border-black bg-white hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400"
                 onClick={() => toggleAccordion(index)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -111,9 +111,8 @@ const Faq = () => {
                   {item.question}
                 </span>
                 <IoMdAdd
-                  className={`w-8 bg-black text-white rounded-full h-8 transition-transform ${
-                    activeIndex === index ? "rotate-45" : ""
-                  }`}
+                  className={`w-8 bg-black text-white rounded-full h-8 transition-transform ${activeIndex === index ? "rotate-45" : ""
+                    }`}
                   aria-hidden="true"
                 />
               </button>
@@ -124,24 +123,22 @@ const Faq = () => {
                     id={`faq-panel-${index}`}
                     role="region"
                     aria-labelledby={`faq-btn-${index}`}
-                    className="p-5 border-t border-black bg-white dark:text-black"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="overflow-hidden border-t border-black bg-white dark:text-black"
+                    initial={{ maxHeight: 0, opacity: 0, paddingTop: 0, paddingBottom: 0 }}
+                    animate={{ maxHeight: 500, opacity: 1, paddingTop: 20, paddingBottom: 20 }}
+                    exit={{ maxHeight: 0, opacity: 0, paddingTop: 0, paddingBottom: 0 }}
+                    transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                   >
-                    <p className="mb-2 text-left">{item.answer}</p>
+                    <p className="mb-2 text-left px-5">{item.answer}</p>
                     {item.list && (
-                      <ul className="list-disc list-outside text-left px-2">
+                      <ul className="list-disc list-outside text-left px-7">
                         {item.list.map((point, i) => (
-                          <li
-                            key={i}
-                            dangerouslySetInnerHTML={{ __html: point }}
-                          ></li>
+                          <li key={i} dangerouslySetInnerHTML={{ __html: point }}></li>
                         ))}
                       </ul>
                     )}
                   </motion.div>
+
                 )}
               </AnimatePresence>
             </div>

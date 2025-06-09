@@ -44,7 +44,7 @@ const Blog = () => {
               key={b.id}
               className="bg-white shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-transform transform hover:scale-105 duration-300"
             >
-              <Link href={`/blog/${b.url}`}>
+              <Link href={`/blogs/${b.url}`}>
                 <Image
                   src={`/blog/${b.image}`}
                   width={500}

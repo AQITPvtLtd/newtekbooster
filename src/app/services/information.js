@@ -51,7 +51,7 @@ export const data = [
     {
         id: 8,
         image: "/services/img7.png",
-        title: "Graphic Design",
+        title: "Graphic Designing",
         url: "services/Graphic-Design",
         btn: "Know More"
     },

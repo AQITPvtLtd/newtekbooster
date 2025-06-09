@@ -119,19 +119,19 @@ const Form = () => {
                         onChange={handlechange}
                         required
                     >
-                        <option value="">I Am Looking For</option>
-                        <option>Website Development</option>
-                        <option>Search Engine Optimization</option>
+                        <option>Branding</option>
                         <option>Content Marketing</option>
                         <option>Email Marketing</option>
-                        <option>Social Marketing</option>
-                        <option>Video Marketing</option>
-                        <option>Branding</option>
-                        <option>Graphic Design</option>
-                        <option>Market-Place Management</option>
                         <option>E-Commerce Management</option>
+                        <option>Graphic Design</option>
+                        <option value="">I Am Looking For</option>
+                        <option>Market-Place Management</option>
                         <option>Online Reputation Management</option>
                         <option>Performance Marketing</option>
+                        <option>Search Engine Optimization</option>
+                        <option>Social Marketing</option>
+                        <option>Video Marketing</option>
+                        <option>Website Development</option>
                     </select>
                 </div>
 

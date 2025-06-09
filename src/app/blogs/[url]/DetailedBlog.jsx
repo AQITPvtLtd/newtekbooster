@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import moment from "moment";
 import Image from 'next/image';
 import { FaUser } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { SlCalender } from "react-icons/sl";
 import Sidebar from '../Sidebar';
 
 const DetailedBlog = ({ url }) => {
@@ -50,7 +50,7 @@ const DetailedBlog = ({ url }) => {
                             </h1>
 
                             {/* Author and Date */}
-                            <div className="mb-5 flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
+                            <div className="flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
                                 <div className="flex flex-wrap items-center">
                                     <div className="mb-5 mr-10 flex items-center">
                                         <FaUser className="mr-2 text-[#084cfc]" />
@@ -61,7 +61,7 @@ const DetailedBlog = ({ url }) => {
                                     <div className="mb-5 flex items-center">
                                         <p className="mr-5 flex items-center text-base font-medium text-body-color">
                                             <span className=" mr-1" aria-hidden="true">
-                                                <MdEmail className='text-[#084cfc]' />
+                                                <SlCalender className='text-[#084cfc] mr-2' />
                                             </span>
                                             {blog.createdAt ? moment(blog.createdAt).format("MMMM DD, YYYY") : "Unknown Date"}
                                         </p>

@@ -36,7 +36,7 @@ export const data = [
     },
     {
         id: 8,
-        title: "Graphic Design",
+        title: "Graphic Designing",
         path: "/typeofservice/Graphic Design",
     },
     {

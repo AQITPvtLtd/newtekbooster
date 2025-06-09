@@ -27,7 +27,7 @@ const Header = () => {
 
                     {/* Navigation Links - Desktop */}
                     <div
-                        className="hidden md:flex space-x-8 font-semibold text-white text-lg"
+                        className="hidden md:flex space-x-8 font-base text-white text-lg"
                         style={{ fontFamily: "Roboto Slab, serif" }}
                     >
                         <Link

@@ -70,7 +70,7 @@ const Bookmeeting = () => {
                         <div className="text-center">
                             <h3 className="text-base sm:text-lg font-semibold text-black">Branch Office</h3>
                             <p className="text-gray-700 text-sm sm:text-base mt-1">
-                                Shop No. 02, H.No. 220, Near Hanuman Mandir, Village Shalimar Bagh, New Delhi, Delhi 110088
+                                Shop no. 02, 220/3, near Hanuman Mandir, Vill Shalimar Bagh, New Delhi, Delhi - 110088
                             </p>
                         </div>
                     </Link>

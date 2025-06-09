@@ -70,7 +70,7 @@ const Testimonial = () => {
                 transition={{ duration: 0.8 }}
                 style={{ fontFamily: "Roboto Slab, serif" }}
             >
-                Clients Testimonial
+                Clients Testimonials
             </motion.h2>
 
             <div className="relative px-4 max-w-7xl mx-auto">

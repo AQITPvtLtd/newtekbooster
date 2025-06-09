@@ -44,7 +44,7 @@ export const items = [
     {
         id: 8,
         image: "/services/img7.png",
-        title: "Graphic Design",
+        title: "Graphic Designing",
         url: "/",
     },
     {

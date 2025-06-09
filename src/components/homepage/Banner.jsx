@@ -13,9 +13,9 @@ const Banner = () => {
             <div className="flex flex-col items-center text-center space-y-6">
                 <div className="space-y-4" style={{ fontFamily: "Roboto Slab, serif" }}>
                     <p className="text-4xl font-bold text-white">Work fast from anywhere</p>
-                    <p className="text-2xl text-gray-300">Your trusted Digital Marketing Platform.</p>
-                    <p className="text-3xl font-bold text-white">Providing the best user experience.</p>
-                    <p className="text-xl text-gray-400">Guaranteed delivery of the best service.</p>
+                    <p className="text-2xl text-gray-300">Your trusted Digital Marketing Platform</p>
+                    <p className="text-3xl font-bold text-white">Providing the best user experience</p>
+                    <p className="text-xl text-gray-400">Guaranteed delivery of the best service</p>
                 </div>
 
                 {/* Buttons */}

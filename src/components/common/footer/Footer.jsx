@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <div className="mx-auto w-full p-4 lg:py-8 bg-gradient-to-t bg-blue">
       {/* <NewsLetter /> */}
-      <div className="px-10 text-white">
+      <div className="px-14 text-white">
         <div className="lg:grid grid-cols-4">
           {/* logo */}
           <div>
@@ -31,8 +31,7 @@ const Footer = () => {
               />
             </Link>
             <p className=" leading-normal">
-              At TekBooster, we are passionate about helping businesses thrive
-              in the digital world.
+              At TekBooster, we are passionate about helping businesses thrive in the digital world. Our mission is to empower brands with innovative digital marketing solutions that drive growth, engagement, and success.
             </p>
           </div>
           <div className="lg:flex justify-center mt-6">
@@ -119,6 +118,14 @@ const Footer = () => {
                     Content Marketing
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/services"
+                    className="hover:text-orange-200 hover:scale-105"
+                  >
+                    Know More Services
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -164,30 +171,30 @@ const Footer = () => {
       </div>
       <hr className="my-6 border-white sm:mx-auto  lg:my-8" />
       <div className="flex justify-center space-x-4 pb-4">
-        <Link href="https://www.facebook.com/profile.php?id=61557224162661&is_tour_dismissed=true" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+        <Link href="https://www.facebook.com/profile.php?id=61557224162661&is_tour_dismissed=true" target="__blank" className="text-white text-2xl transition-transform duration-500 hover:scale-125">
           <FaFacebook />
         </Link>
-        <Link href="https://www.instagram.com/tek_booster/" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+        <Link href="https://www.instagram.com/tek_booster/" target="__blank" className="text-white text-2xl transition-transform duration-500 hover:scale-125">
           <FaInstagram />
         </Link>
-        <Link href="https://www.linkedin.com/in/tek-booster-7739092b8/" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+        <Link href="https://www.linkedin.com/in/tek-booster-7739092b8/" target="__blank" className="text-white text-2xl transition-transform duration-500 hover:scale-125">
           <FaLinkedinIn />
         </Link>
-        <Link href="https://twitter.com/Tek_booster" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+        <Link href="https://twitter.com/Tek_booster" target="__blank" className="text-white text-2xl transition-transform duration-500 hover:scale-125">
           <FaXTwitter />
         </Link>
-        <Link href="https://www.youtube.com/channel/UCdI4zxcUrKryZd__uQysiNg" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+        <Link href="https://www.youtube.com/channel/UCdI4zxcUrKryZd__uQysiNg" target="__blank" className="text-white text-2xl transition-transform duration-500 hover:scale-125">
           <FaYoutube />
         </Link>
 
-        <Link href="https://in.pinterest.com/tekbooster/" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+        <Link href="https://in.pinterest.com/tekbooster/" target="__blank" className="text-white text-2xl transition-transform duration-500 hover:scale-125">
           <FaPinterest />
         </Link>
 
-        <Link href="https://www.quora.com/profile/Tekbooster" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+        <Link href="https://www.quora.com/profile/Tekbooster" target="__blank" className="text-white text-2xl transition-transform duration-500 hover:scale-125">
           <FaQuora />
         </Link>
-        <Link href="https://wa.link/1dzd8t" target="__blank" className="text-white text-2xl transition-transform duration-300 hover:scale-110">
+        <Link href="https://wa.link/1dzd8t" target="__blank" className="text-white text-2xl transition-transform duration-500 hover:scale-125">
           <FaWhatsapp />
         </Link>
 

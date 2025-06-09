@@ -58,9 +58,11 @@ const Servicedata = ({ id }) => {
             <ul className="space-y-2">
               {dataservice.map((item, index) => (
                 <li key={index}>
-                  <Link href={`/services/${item.id}`}>
-                    <span className="flex items-center gap-2 text-blue-600 hover:underline cursor-pointer">
-                      <FaArrowRightFromBracket />
+                  <Link href={`/services/${item.id}`} className="flex items-start gap-2 text-blue-600 hover:underline cursor-pointer">
+                  <div>
+                   <FaArrowRightFromBracket className="mt-1.5 " /></div>
+                    <span >
+                     
                       {item.title}
                     </span>
                   </Link>

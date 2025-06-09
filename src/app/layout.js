@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/footer/Footer";
 import SocialLinks from "@/components/SocialLinks";
-import ClientLayout from "@/components/common/ClientLayout"; // 👈 Client wrapper
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,9 +22,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <Header />
-        <ClientLayout>{children}</ClientLayout> {/* 👈 Wrap with client component */}
+        {children}
         <SocialLinks />
         <Footer />
       </body>

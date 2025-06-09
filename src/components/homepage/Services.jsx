@@ -110,7 +110,7 @@ const Services = () => {
 
                 <div className="text-center mt-8">
                     <Link href="/services">
-                        <button className="px-6 py-2 bg-[#084cfc] text-white rounded-full shadow-md hover:bg-[#0639c9] transition duration-300">
+                        <button className="px-6 py-2 bg-[#084cfc] text-white cursor-pointer rounded-full shadow-md hover:bg-[#0639c9] transition duration-300">
                             View All
                         </button>
                     </Link>

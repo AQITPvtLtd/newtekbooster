@@ -104,7 +104,7 @@ const Partners = () => {
     };
 
     return (
-        <div className="py-10 text-center bg-[#080414]">
+        <div className="py-10 text-center">
             <h2 className="text-white font-bold mb-6" style={{ fontFamily: "'Roboto Slab', serif", fontSize: "2rem" }}>
                 Trusted by Corporate Partners
             </h2>

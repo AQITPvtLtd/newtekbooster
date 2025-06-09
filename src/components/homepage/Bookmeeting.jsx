@@ -57,7 +57,7 @@ const Bookmeeting = () => {
                         <div className="text-center">
                             <h3 className="text-base sm:text-lg font-semibold text-black">Branch Office</h3>
                             <p className="text-gray-700 text-sm sm:text-base mt-1">
-                                4th Floor, 2E, 4, Block E 2, Jhandewalan Extension, Karol Bagh, New Delhi, Delhi 110055
+                                4th Floor, 2E, 4, Block E 2, Jhandewalan Extension, <br /> Karol Bagh, New Delhi, <br /> Delhi 110055
                             </p>
                         </div>
                     </Link>
@@ -70,7 +70,7 @@ const Bookmeeting = () => {
                         <div className="text-center">
                             <h3 className="text-base sm:text-lg font-semibold text-black">Branch Office</h3>
                             <p className="text-gray-700 text-sm sm:text-base mt-1">
-                                Shop no. 02, 220/3, near Hanuman Mandir, Vill Shalimar Bagh, New Delhi, Delhi - 110088
+                                Shop no. 02, 220/3, <br /> Near Hanuman Mandir, <br /> Vill Shalimar Bagh, <br /> New Delhi, Delhi - 110088
                             </p>
                         </div>
                     </Link>

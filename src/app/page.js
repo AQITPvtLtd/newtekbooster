@@ -1,3 +1,4 @@
+import PopupModal from '@/components/common/PopupModal'
 import About from '@/components/homepage/About'
 import Banner from '@/components/homepage/Banner'
 import Bookmeeting from '@/components/homepage/Bookmeeting'
@@ -10,6 +11,7 @@ import React from 'react'
 const page = () => {
   return (
     <div>
+      <PopupModal />
       <Banner />
       <About />
       <Services />

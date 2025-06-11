@@ -12,25 +12,36 @@ const videos = [
     'm23WGp-Vs34'
 ];
 
-// Bottom center arrows
+// Dummy wrappers, actual arrow logic is handled by slick manually
 const CustomPrevArrow = ({ onClick }) => (
-    <div
-        className="absolute bottom-0 left-1/2 transform -translate-x-12 translate-y-10 z-10 cursor-pointer p-3 bg-white text-black rounded-full shadow hover:bg-gray-100 transition"
+    <button
         onClick={onClick}
+        className="p-3 bg-white text-black rounded-full shadow hover:bg-gray-100 transition"
     >
         <GrPrevious size={20} />
-    </div>
+    </button>
 );
 
 const CustomNextArrow = ({ onClick }) => (
-    <div
-        className="absolute bottom-0 left-1/2 transform translate-x-12 translate-y-10 z-10 cursor-pointer p-3 bg-white text-black rounded-full shadow hover:bg-gray-100 transition"
+    <button
         onClick={onClick}
+        className="p-3 bg-white text-black rounded-full shadow hover:bg-gray-100 transition"
     >
         <GrNext size={20} />
-    </div>
+    </button>
 );
+
 const Testimonial = () => {
+    const sliderRef = React.useRef(null);
+
+    const goToNext = () => {
+        sliderRef.current?.slickNext();
+    };
+
+    const goToPrev = () => {
+        sliderRef.current?.slickPrev();
+    };
+
     const settings = {
         dots: false,
         infinite: true,
@@ -40,8 +51,7 @@ const Testimonial = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 4000,
-        nextArrow: <CustomNextArrow />,
-        prevArrow: <CustomPrevArrow />,
+        arrows: false, // disable default arrows
         responsive: [
             {
                 breakpoint: 1024,
@@ -58,11 +68,10 @@ const Testimonial = () => {
                 },
             },
         ],
-
     };
+
     return (
         <div className="py-10">
-
             <motion.h2
                 className="text-3xl md:text-4xl font-bold text-center text-white mb-5"
                 initial={{ opacity: 0, y: 30 }}
@@ -74,7 +83,7 @@ const Testimonial = () => {
             </motion.h2>
 
             <div className="relative px-4 max-w-7xl mx-auto">
-                <Slider {...settings}>
+                <Slider ref={sliderRef} {...settings}>
                     {videos.map((id, index) => (
                         <div key={index} className="px-3">
                             <div className="transition-transform duration-500 ease-in-out transform scale-90 slick-center:scale-105 rounded-xl overflow-hidden shadow-md bg-white">
@@ -92,9 +101,15 @@ const Testimonial = () => {
                         </div>
                     ))}
                 </Slider>
+
+                {/* Arrows centered below slider */}
+                <div className="flex justify-center gap-4 mt-6">
+                    <CustomPrevArrow onClick={goToPrev} />
+                    <CustomNextArrow onClick={goToNext} />
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Testimonial
+export default Testimonial;

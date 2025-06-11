@@ -105,10 +105,10 @@ const Partners = () => {
 
     return (
         <div className="py-10 text-center">
-            <h2 className="text-white font-bold mb-6" style={{ fontFamily: "'Roboto Slab', serif", fontSize: "2rem" }}>
+            <h2 className="text-white font-bold mb-6 px-3" style={{ fontFamily: "'Roboto Slab', serif", fontSize: "2rem" }}>
                 Trusted by Corporate Partners
             </h2>
-            <p className="text-white mb-10 mx-auto" style={{ maxWidth: "720px" }}>
+            <p className="text-white mb-10 mx-auto px-3" style={{ maxWidth: "720px" }}>
                 We are proud to have collaborated with leading brands across various industries. Here are some of our valuable partners:
             </p>
 

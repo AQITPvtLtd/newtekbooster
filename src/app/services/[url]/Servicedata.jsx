@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import dataservice from "@/data/servicedata";
+import { data } from "../information";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import Link from "next/link";
 
-const Servicedata = ({ id }) => {
-  const obj = dataservice.find((item) => item.id == id);
+const Servicedata = ({ url }) => {
+  const obj = data.find((item) => item.url == url);
 
   if (!obj) {
     return <div>Service data not found.</div>;
@@ -27,8 +27,6 @@ const Servicedata = ({ id }) => {
           />
         )}
       </div>
-
-
 
       {/* Floating Content Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-10 lg:-mt-40 relative z-10">
@@ -56,13 +54,13 @@ const Servicedata = ({ id }) => {
               Know More Services
             </h2>
             <ul className="space-y-2">
-              {dataservice.map((item, index) => (
+              {data.map((item, index) => (
                 <li key={index}>
-                  <Link href={`/services/${item.id}`} className="flex items-start gap-2 text-blue-600 hover:underline cursor-pointer">
-                  <div>
-                   <FaArrowRightFromBracket className="mt-1.5 " /></div>
+                  <Link href={`/services/${item.url}`} className="flex items-start gap-2 text-blue-600 hover:underline cursor-pointer">
+                    <div>
+                      <FaArrowRightFromBracket className="mt-1.5 " /></div>
                     <span >
-                     
+
                       {item.title}
                     </span>
                   </Link>

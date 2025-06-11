@@ -37,7 +37,7 @@ const Tekservice = () => {
                                 {d.title}
                             </h2>
                             <Link
-                                href={`/services/${d.id}`}
+                                href={`/services/${d.url}`}
                                 className="inline-block mt-auto px-5 py-2 w-fit bg-[#084cfc] text-white text-base md:text-lg rounded-lg border-2 border-[#084cfc] hover:bg-transparent hover:text-black transition-all"
                             >
                                 {d.btn}

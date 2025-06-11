@@ -7,6 +7,7 @@ import { GrPrevious, GrNext } from "react-icons/gr";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { data } from "@/app/services/information";
 
 // Custom Arrows
 const CustomNextArrow = (props) => {
@@ -38,11 +39,23 @@ const Services = () => {
 
     useEffect(() => {
         const loadItems = async () => {
-            const mod = await import("@/data/services");
-            setItems(mod.items);
+            try {
+                const mod = await import("@/app/services/information");
+                if (mod?.data?.items) {
+                    setItems(mod.data.items);
+                } else {
+                    console.error("data.items is undefined");
+                    setItems([]); // fallback to empty array
+                }
+            } catch (error) {
+                console.error("Failed to load service data:", error);
+                setItems([]); // fallback in case of error
+            }
         };
         loadItems();
     }, []);
+
+
 
     const settings = {
         dots: false,
@@ -80,8 +93,8 @@ const Services = () => {
 
             <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-8">
                 <Slider {...settings}>
-                    {items.map((item) => (
-                        <div key={item.id} className="px-5">
+                    {data.map((item) => (
+                        <div key={item.url} className="px-5">
                             <div className="bg-white rounded-tl-[30%] rounded-br-[30%] rounded-lg shadow-xl flex flex-col overflow-hidden transform transition-transform duration-300 hover:scale-105">
                                 <div className="h-[220px] md:h-[240px] overflow-hidden">
                                     <Image
@@ -97,7 +110,7 @@ const Services = () => {
                                         {item.title}
                                     </h3>
                                     <Link
-                                        href={`services/${item.id}`}
+                                        href={`services/${item.url}`}
                                         className="inline-block mt-auto px-5 py-2 w-fit bg-[#084cfc] text-white text-base md:text-lg rounded-lg border-2 border-[#084cfc] hover:bg-transparent hover:text-black transition-all"
                                     >
                                         Know More

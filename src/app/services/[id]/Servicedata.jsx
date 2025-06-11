@@ -15,7 +15,7 @@ const Servicedata = ({ id }) => {
     <div className="relative mt-15">
       {/* Fullscreen Background Image */}
       {/* Half-Screen Background Image with Horizontal Padding */}
-      <div className="w-full h-[50vh] px-5 sm:px-8">
+      <div className="w-full h-[200px] sm:h-[300px] lg:h-[50vh] px-5 sm:px-8">
         {obj.image && (
           <Image
             src={obj.image}
@@ -31,7 +31,7 @@ const Servicedata = ({ id }) => {
 
 
       {/* Floating Content Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-40 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-10 lg:-mt-40 relative z-10">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Main Content Card */}
           <div className="w-full lg:w-3/4 bg-white p-8 rounded-2xl shadow-2xl">

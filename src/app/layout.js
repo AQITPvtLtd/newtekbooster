@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/footer/Footer";
 import SocialLinks from "@/components/SocialLinks";
-import ClientLayout from "@/components/common/ClientLayout"; // 👈 New file
+import ClientLayout from "@/components/common/ClientLayout"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

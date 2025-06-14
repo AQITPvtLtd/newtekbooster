@@ -14,12 +14,18 @@ const Partners = () => {
         "/logos/framilys.webp",
         "/logos/hvd1.webp",
         "/logos/medicamen.webp",
-        "/logos/ramkinkarjha.webp",
         "/logos/safegate.webp",
         "/logos/smithways.webp",
         "/logos/springHope.webp",
         "/logos/ssb.webp",
         "/logos/treatglobe.webp",
+        "/logos/aryaonco.png",
+        "/logos/drsantosh.png",
+        "/logos/canceronco.png",
+        "/logos/genelab.png",
+        "/logos/drsunillogo.png",
+        "/logos/drvarun.png",
+        "/logos/drKhullar.png",
     ];
 
     const [colors, setColors] = useState([]);
@@ -112,7 +118,7 @@ const Partners = () => {
                 We are proud to have collaborated with leading brands across various industries. Here are some of our valuable partners:
             </p>
 
-            <div className="container mx-auto lg:px-10 px-2">
+            <div className="container mx-auto lg:px-24 px-2">
                 <div
                     ref={containerRef}
                     className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
@@ -122,7 +128,7 @@ const Partners = () => {
                         return (
                             <div
                                 key={index}
-                                className="partner-box bg-white p-4 rounded shadow-sm flex items-center justify-center h-24 group transition duration-500 border border-transparent hover:border-yellow-400 hover:shadow-[0_0_15px_#FFD700] hover:bg-transparent"
+                                className="partner-box bg-white p-4 rounded shadow-sm flex items-center justify-center h-24 group transition duration-500 border border-transparent hover:border-yellow-400 hover:shadow-[0_0_15px_#FFD700] hover:bg-[#6e6e6e5b]"
                                 style={{
                                     transition: "border 0.4s ease, box-shadow 0.4s ease",
                                     filter: `drop-shadow(0 0 0px transparent)`

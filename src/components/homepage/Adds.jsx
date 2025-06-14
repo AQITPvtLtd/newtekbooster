@@ -60,7 +60,7 @@ const Adds = () => {
             {/* Parent wrapper with ref */}
             <div
                 ref={containerRef}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 px-10"
             >
                 {reviews.map((src, index) => (
                     <div

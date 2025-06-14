@@ -15,7 +15,7 @@ import { FaQuora } from "react-icons/fa";
 // import NewsLetter from "../NewLetter";
 const Footer = () => {
   return (
-    <div className="mx-auto w-full p-4 lg:py-8 bg-gradient-to-t bg-blue">
+    <div className="mx-auto w-full p-4 bg-gradient-to-t bg-blue">
       {/* <NewsLetter /> */}
       <div className="px-14 text-white">
         <div className="lg:grid grid-cols-4">
@@ -200,14 +200,15 @@ const Footer = () => {
 
       </div>
 
-      <div className="flex justify-center items-center text-white">
-        <span className="text-sm sm:text-center ">
-          © 2024{" "}
-          <Link href="/" className="hover:underline">
-            Tek Booster
+      <div className='text-center text-white'>
+        <p className='font-semibold text-sm md:text-base'>
+          <Link href='https://tekbooster.com' target='_blank' style={{ fontFamily: "Roboto Slab, serif" }}>
+            Design & Developed By Tek Booster (Digital Marketing Company)
           </Link>
-          . All Rights Reserved.
-        </span>
+        </p>
+        <p className='font-semibold text-sm md:text-base' style={{ fontFamily: "Roboto Slab, serif" }}>
+          (Powered by AQIT Pvt Ltd)
+        </p>
       </div>
     </div>
   );
